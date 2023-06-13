@@ -18,6 +18,10 @@ export default function Home() {
     category: tab,
   });
 
+  const products = data
+    ? data.map((product) => <ProductBox key={product.id} {...product} />)
+    : null;
+
   return (
     <>
       <Head>
@@ -42,27 +46,9 @@ export default function Home() {
                 />
               }
             >
-              <div tab-value="all">
-                {data
-                  ? data.map((product) => (
-                      <ProductBox key={product.id} {...product} />
-                    ))
-                  : null}
-              </div>
-              <div tab-value="t-shirts">
-                {data
-                  ? data.map((product) => (
-                      <ProductBox key={product.id} {...product} />
-                    ))
-                  : null}
-              </div>
-              <div tab-value="mugs">
-                {data
-                  ? data.map((product) => (
-                      <ProductBox key={product.id} {...product} />
-                    ))
-                  : null}
-              </div>
+              <div tab-value="all">{products}</div>
+              <div tab-value="t-shirts">{products}</div>
+              <div tab-value="mugs">{products}</div>
             </Tabs>
           </div>
         </Wrapper>
