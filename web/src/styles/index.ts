@@ -41,4 +41,9 @@ export const {
       full: "9999px",
     },
   },
+
+  media: {
+    sm: "(max-width: 500px)",
+    md: "(max-width: 768px)",
+  },
 });

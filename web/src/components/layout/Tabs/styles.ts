@@ -5,6 +5,13 @@ export const Box = styled("div", {
   display: "flex",
   alignItems: "center",
   justifyContent: "space-between",
+
+  "@md": {
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "2rem",
+  },
 });
 
 export const TabsRoot = styled(Tabs.Root, {
@@ -17,6 +24,18 @@ export const TabsList = styled(Tabs.List, {
   display: "flex",
   maxWidth: 300,
   width: "100%",
+
+  "@md": {
+    margin: "0 auto",
+    justifyContent: "center",
+  },
+
+  "@sm": {
+    // overflow: "auto",
+    justifyContent: "flex-start",
+    flexDirection: "column",
+    gap: "1rem",
+  },
 });
 
 export const TabsTrigger = styled(Tabs.Trigger, {
@@ -39,6 +58,15 @@ export const TabsTrigger = styled(Tabs.Trigger, {
   "&[data-state=active]": {
     fontWeight: "600",
     boxShadow: `inset 0 -1px 0 0 var(--orange), 0 4px 0 0 var(--orange)`,
+  },
+
+  "@sm": {
+    justifyContent: "flex-start",
+    lineHeight: "180%",
+
+    "&[data-state=active]": {
+      boxShadow: `inset 4px 0 0 0 var(--orange), 0 0 0 0 var(--orange)`,
+    },
   },
 });
 

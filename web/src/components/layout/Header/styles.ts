@@ -12,12 +12,17 @@ export const HeaderContainer = styled("header", {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
+    flexWrap: "wrap",
   },
 
   ".end": {
     display: "flex",
     alignItems: "center",
     gap: "1rem",
+
+    "@md": {
+      width: "100%",
+    },
   },
 });
 
@@ -36,6 +41,7 @@ export const InputSearch = styled("div", {
   alignItems: "center",
   justifyContent: "space-between",
   minWidth: 280,
+  flex: 1,
 
   input: {
     outline: "none",

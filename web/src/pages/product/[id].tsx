@@ -9,6 +9,7 @@ import { gql } from "@apollo/client";
 
 import { Undo2, ShoppingBag } from "lucide-react";
 import { GetStaticPaths, GetStaticProps } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export default function ProductDetail({ product }: { product: Product }) {
@@ -20,7 +21,13 @@ export default function ProductDetail({ product }: { product: Product }) {
             <Undo2 size={18} />
             Voltar
           </Link>
-          <img src={product.imageUrl} alt="mugs" />
+          <Image
+            src={product.imageUrl}
+            className="image"
+            alt="mugs"
+            width={300}
+            height={300}
+          />
         </LeftSection>
         <RightSection>
           <div className="top">
@@ -52,24 +59,9 @@ export default function ProductDetail({ product }: { product: Product }) {
 export const getStaticPaths: GetStaticPaths = async () => {
   const { data } = await apolloClient.query({
     query: gql`
-      query Products(
-        $page: Int
-        $perPage: Int
-        $filter: ProductFilter
-        $allProductsMetaFilter: ProductFilter
-      ) {
-        allProducts(page: $page, perPage: $perPage, filter: $filter) {
+      query Products($page: Int, $perPage: Int) {
+        allProducts(page: $page, perPage: $perPage) {
           id
-          created_at
-          image_url
-          price_in_cents
-          sales
-          category
-          name
-        }
-
-        _allProductsMeta(filter: $allProductsMetaFilter) {
-          count
         }
       }
     `,

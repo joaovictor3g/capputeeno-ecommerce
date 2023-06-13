@@ -40,4 +40,8 @@ export const ProductBoxContainer = styled("div", {
       fontSize: "$normal",
     },
   },
+
+  "@md": {
+    maxWidth: "initial",
+  },
 });

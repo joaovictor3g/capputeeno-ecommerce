@@ -3,11 +3,13 @@ import { styled } from "@stitches/react";
 
 export const Box = styled(Wrapper, {
   display: "grid",
-  gridTemplateColumns: "repeat(auto-fit, minmax(550px, 1fr))",
+  gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
   gap: "2rem",
 });
 
 export const LeftSection = styled("section", {
+  width: "100%",
+
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
@@ -35,17 +37,21 @@ export const LeftSection = styled("section", {
     },
   },
 
-  img: {
+  ".image": {
     borderRadius: "$md",
-    objectFit: "contain",
+    objectFit: "fill",
+    width: "100%",
+    height: "100%",
   },
 });
 
 export const RightSection = styled("section", {
+  width: "100%",
   display: "flex",
   flexDirection: "column",
   justifyContent: "space-between",
   fontFamily: "var(--saira)",
+  gap: "1rem",
 
   ".top": {
     ".category": {
@@ -92,6 +98,7 @@ export const RightSection = styled("section", {
   ".add-to-cart": {
     backgroundColor: "$blue",
     border: "none",
+    width: "100%",
 
     display: "flex",
     alignItems: "center",
