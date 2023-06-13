@@ -5,7 +5,7 @@ export function Header() {
   return (
     <HeaderContainer>
       <div className="wrapper">
-        <Logo>capputeeno</Logo>
+        <Logo>uzumaki.drops</Logo>
 
         <div className="end">
           <InputSearch>

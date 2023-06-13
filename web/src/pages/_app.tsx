@@ -1,5 +1,7 @@
 import { Header } from "@/components/layout/Header";
+import apolloClient from "@/lib/apollo";
 import { globalStyles } from "@/styles/global";
+import { ApolloProvider } from "@apollo/client";
 import type { AppProps } from "next/app";
 
 import { Saira, Saira_Stencil_One as SairaStencilOne } from "next/font/google";
@@ -20,9 +22,11 @@ globalStyles();
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className={`${saira.variable} ${sairaStencilOne.variable}`}>
-      <Header />
-      <Component {...pageProps} />
-    </div>
+    <ApolloProvider client={apolloClient}>
+      <div className={`${saira.variable} ${sairaStencilOne.variable}`}>
+        <Header />
+        <Component {...pageProps} />
+      </div>
+    </ApolloProvider>
   );
 }

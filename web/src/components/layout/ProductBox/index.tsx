@@ -1,19 +1,13 @@
+import { Product } from "@/@types/Product";
 import { ProductBoxContainer } from "./styles";
 
-interface ProductBoxProps {
-  imageUrl: string;
-  id: string;
-  price: number;
-  name: string;
-}
-
-export function ProductBox(props: ProductBoxProps) {
+export function ProductBox(props: Product) {
   return (
     <ProductBoxContainer>
       <img src={props.imageUrl} alt={props.name} />
       <div className="product-text-infos">
         <a href="#">{props.name}</a>
-        <span className="price">R$ {props.price}</span>
+        <span className="price">R$ {props.priceFormatted}</span>
       </div>
     </ProductBoxContainer>
   );

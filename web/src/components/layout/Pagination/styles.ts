@@ -39,11 +39,18 @@ export const PaginationNumbers = styled("div", {
   alignItems: "center",
   gap: 2,
 
+  maxWidth: 168,
+  overflow: "hidden",
+
   ".page-number": {
     fontFamily: "var(--saira)",
     fontSize: "$normal",
     fontWeight: 600,
     fontStyle: "normal",
+    transition: "transform 0.2s",
+
+    flexShrink: 0,
+    // transform: "translateX(-34px)",
 
     '&[data-active="true"]': {
       border: "2px solid $orange",
@@ -56,4 +63,5 @@ export const Arrows = styled("div", {
   display: "flex",
   alignItems: "center",
   gap: 2,
+  zIndex: 1,
 });
