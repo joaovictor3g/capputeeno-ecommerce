@@ -12,7 +12,7 @@ export function ProductBox(props: ProductBoxProps) {
     <ProductBoxContainer>
       <img src={props.imageUrl} alt={props.name} />
       <div className="product-text-infos">
-        <strong>{props.name}</strong>
+        <a href="#">{props.name}</a>
         <span className="price">R$ {props.price}</span>
       </div>
     </ProductBoxContainer>

@@ -1,6 +1,12 @@
 import { styled } from "@/styles";
 import * as Tabs from "@radix-ui/react-tabs";
 
+export const Box = styled("div", {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+});
+
 export const TabsRoot = styled(Tabs.Root, {
   display: "flex",
   flexDirection: "column",

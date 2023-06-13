@@ -20,12 +20,17 @@ export const ProductBoxContainer = styled("div", {
     padding: "0.5rem 0.75rem",
     fontFamily: "var(--saira)",
 
-    strong: {
+    a: {
       fontWeight: 300,
       fontSize: "normal",
       color: "$gray400",
       borderBottom: "1px solid #DCE2E6",
       paddingBottom: "0.5rem",
+      textDecoration: "none",
+
+      "&:hover": {
+        textDecoration: "underline",
+      },
     },
 
     ".price": {

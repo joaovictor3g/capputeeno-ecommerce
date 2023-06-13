@@ -1,4 +1,5 @@
 import { Product } from "@/@types/Product";
+import { Pagination } from "@/components/layout/Pagination";
 import { ProductBox } from "@/components/layout/ProductBox";
 import { Tabs } from "@/components/layout/Tabs";
 import { Wrapper } from "@/components/styled/wrapper";
@@ -23,7 +24,7 @@ export default function Home({ products }: HomeProps) {
       <main>
         <Wrapper>
           <div className="tabs-pagination-container">
-            <Tabs>
+            <Tabs renderRight={<Pagination />}>
               <div tab-value="all">
                 {products
                   ? products.map((product) => (

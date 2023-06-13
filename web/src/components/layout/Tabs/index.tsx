@@ -1,5 +1,5 @@
-import { cloneElement } from "react";
-import { TabsContent, TabsList, TabsRoot, TabsTrigger } from "./styles";
+import React, { cloneElement } from "react";
+import { TabsContent, TabsList, TabsRoot, TabsTrigger, Box } from "./styles";
 
 const items = [
   {
@@ -18,18 +18,22 @@ const items = [
 
 interface TabsProps {
   children: React.JSX.Element[];
+  renderRight?: React.JSX.Element;
 }
 
-export function Tabs({ children }: TabsProps) {
+export function Tabs({ children, renderRight }: TabsProps) {
   return (
     <TabsRoot defaultValue="all">
-      <TabsList aria-label="Gerencie os produtos">
-        {items.map((item) => (
-          <TabsTrigger key={item.value} value={item.value}>
-            {item.name}
-          </TabsTrigger>
-        ))}
-      </TabsList>
+      <Box>
+        <TabsList aria-label="Gerencie os produtos">
+          {items.map((item) => (
+            <TabsTrigger key={item.value} value={item.value}>
+              {item.name}
+            </TabsTrigger>
+          ))}
+        </TabsList>
+        {renderRight}
+      </Box>
       {children.map((child, i) => (
         <TabsContent key={i} value={child.props["tab-value"]}>
           {cloneElement(child, {
