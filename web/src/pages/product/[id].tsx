@@ -9,50 +9,59 @@ import { gql } from "@apollo/client";
 
 import { Undo2, ShoppingBag } from "lucide-react";
 import { GetStaticPaths, GetStaticProps } from "next";
+import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function ProductDetail({ product }: { product: Product }) {
   return (
-    <main>
-      <Box>
-        <LeftSection>
+    <>
+      <Head>
+        <title>{product.name}</title>
+      </Head>
+
+      <main>
+        <Box>
           <Link href="/" className="back">
             <Undo2 size={18} />
             Voltar
           </Link>
-          <Image
-            src={product.imageUrl}
-            className="image"
-            alt="mugs"
-            width={300}
-            height={300}
-          />
-        </LeftSection>
-        <RightSection>
-          <div className="top">
-            <small className="category">{product.category}</small>
-            <h1 className="name">{product.name}</h1>
-            <span className="price">R$ {product.priceFormatted}</span>
+          <div>
+            <LeftSection>
+              <Image
+                src={product.imageUrl}
+                className="image"
+                alt="mugs"
+                width={300}
+                height={300}
+              />
+            </LeftSection>
+            <RightSection>
+              <div className="top">
+                <small className="category">{product.category}</small>
+                <h1 className="name">{product.name}</h1>
+                <span className="price">R$ {product.priceFormatted}</span>
 
-            <small className="freight">
-              *Frete de R$40,00 para todo o Brasil. Grátis para compras acima de
-              R$900,00.
-            </small>
+                <small className="freight">
+                  *Frete de R$40,00 para todo o Brasil. Grátis para compras
+                  acima de R$900,00.
+                </small>
+              </div>
+
+              <div className="middle">
+                <span className="title-description">Descrição</span>
+                <p className="description">{product.description}</p>
+              </div>
+
+              <button className="add-to-cart">
+                <ShoppingBag />
+                Adicionar ao carrinho
+              </button>
+            </RightSection>
           </div>
-
-          <div className="middle">
-            <span className="title-description">Descrição</span>
-            <p className="description">{product.description}</p>
-          </div>
-
-          <button className="add-to-cart">
-            <ShoppingBag />
-            Adicionar ao carrinho
-          </button>
-        </RightSection>
-      </Box>
-    </main>
+        </Box>
+      </main>
+    </>
   );
 }
 

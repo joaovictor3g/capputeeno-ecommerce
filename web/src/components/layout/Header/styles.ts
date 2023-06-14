@@ -1,7 +1,18 @@
 import { styled } from "@/styles";
+import Link from "next/link";
 
 export const HeaderContainer = styled("header", {
-  backgroundColor: "$white",
+  height: 80,
+
+  ".fixed": {
+    backgroundColor: "$white",
+    position: "fixed",
+    top: 0,
+    left: 0,
+    width: "100%",
+    zIndex: 9999,
+    borderBottom: "1px solid $gray100",
+  },
 
   ".wrapper": {
     maxWidth: 1200,
@@ -24,11 +35,17 @@ export const HeaderContainer = styled("header", {
       width: "100%",
     },
   },
+
+  "@md": {
+    height: 120,
+  },
 });
 
-export const Logo = styled("h1", {
+export const Logo = styled(Link, {
   fontFamily: "var(--saira-stencil-one)",
   color: "$gray200",
+  fontSize: "2.5rem",
+  textDecoration: "none",
 });
 
 export const InputSearch = styled("div", {
@@ -53,7 +70,7 @@ export const InputSearch = styled("div", {
   },
 });
 
-export const CartButton = styled("button", {
+export const CartButton = styled(Link, {
   backgroundColor: "transparent",
   border: "none",
   color: "$gray300",
@@ -74,6 +91,7 @@ export const CartButton = styled("button", {
     right: -3,
 
     fontFamily: "var(--saira)",
+    fontSize: "0.75rem",
     borderRadius: "$full",
     color: "$white",
 

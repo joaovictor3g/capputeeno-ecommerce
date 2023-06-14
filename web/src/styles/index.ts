@@ -28,6 +28,8 @@ export const {
       orange: "#FFA585",
 
       blue: "#115D8C",
+
+      green: "#51B853",
     },
 
     fontSizes: {
@@ -45,5 +47,6 @@ export const {
   media: {
     sm: "(max-width: 500px)",
     md: "(max-width: 768px)",
+    lg: "(max-width: 1000px)",
   },
 });

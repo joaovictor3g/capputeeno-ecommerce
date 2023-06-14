@@ -4,18 +4,23 @@ import { Search, ShoppingBag } from "lucide-react";
 export function Header() {
   return (
     <HeaderContainer>
-      <div className="wrapper">
-        <Logo>uzumaki.drops</Logo>
+      <div className="fixed">
+        <div className="wrapper">
+          <Logo href="/">uzumaki.drops</Logo>
 
-        <div className="end">
-          <InputSearch>
-            <input type="text" placeholder="Procurando por algo específico?" />
-            <Search />
-          </InputSearch>
+          <div className="end">
+            <InputSearch>
+              <input
+                type="text"
+                placeholder="Procurando por algo específico?"
+              />
+              <Search />
+            </InputSearch>
 
-          <CartButton>
-            <ShoppingBag />
-          </CartButton>
+            <CartButton href="/cart">
+              <ShoppingBag />
+            </CartButton>
+          </div>
         </div>
       </div>
     </HeaderContainer>

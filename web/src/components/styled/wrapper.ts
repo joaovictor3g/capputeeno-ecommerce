@@ -5,4 +5,8 @@ export const Wrapper = styled("div", {
   margin: "2rem auto",
   width: "100%",
   padding: "0.5rem",
+
+  "@md": {
+    margin: "0.6rem auto",
+  },
 });

@@ -2,18 +2,12 @@ import { Wrapper } from "@/components/styled/wrapper";
 import { styled } from "@stitches/react";
 
 export const Box = styled(Wrapper, {
-  display: "grid",
-  gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-  gap: "2rem",
-});
-
-export const LeftSection = styled("section", {
-  width: "100%",
-
-  display: "flex",
-  flexDirection: "column",
-  justifyContent: "space-between",
-  gap: 22,
+  "& > div": {
+    marginTop: "2rem",
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+    gap: "2rem",
+  },
 
   ".back": {
     width: "max-content",
@@ -36,6 +30,15 @@ export const LeftSection = styled("section", {
       textDecoration: "underline",
     },
   },
+});
+
+export const LeftSection = styled("section", {
+  width: "100%",
+
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "space-between",
+  gap: 22,
 
   ".image": {
     borderRadius: "$md",
